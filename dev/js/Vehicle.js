@@ -70,13 +70,3 @@ var Vehicle = function () {
 		self._motors[1].update();
 	}
 }
-
-Vehicle.prototype = {
-	set position(value) {
-		this._position = value;
-	},
-	get position() {
-		return this._position;
-	}
-}
-
