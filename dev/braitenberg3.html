@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <title>Braitenberg</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+<canvas id="canvas"></div>
+<script type="text/javascript">
+(function() {
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    window.addEventListener("resize", resizeCanvas, false);
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+
+    var braitenberg = new Braitenberg("canvas");
+    
+    braitenberg.show_trails = false;
+    braitenberg.show_sensors = true;
+    braitenberg.show_sensor_lines = true;
+    
+    braitenberg.init();
+
+    for (var i = 0; i < 10; i++) { braitenberg.addLamp(); }
+    for (var i = 0; i < 30; i++) { braitenberg.addVehicle(); }
+})();
+</script>
+</body>
+</html>
